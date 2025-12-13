@@ -1,0 +1,14 @@
+.no-movie-wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.no-movie-heading{
+    margin-bottom: 2.4rem;
+    font-size: 5rem;
+}

@@ -1,0 +1,74 @@
+.pagination-wrapper {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20rem;
+}
+
+.pagination-bar {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.page-num{
+    padding: 0.5rem 0.75rem;
+    background-color: var(--color-dark-teal);
+    color: var(--color-text-white);
+    border-radius: 0.2rem;
+    border: none;
+    cursor: pointer;
+}
+
+.page-num-active {
+    background-color:var(--color-green-button);
+}
+
+.page-btn {
+    background-color: var(--color-dark-teal);
+    color: var(--color-text-white);
+    border: none;
+    cursor: pointer;
+}
+.page-btn:hover{
+    color:var(--color-green-button);
+}
+
+.page-btn-disabled {
+    background-color: var(--color-dark-teal);
+    border: none;
+    cursor: none;
+    color: grey;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.4rem;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.movies-wrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1000px) {
+
+}
+
+
+
+@media ( max-width: 500px),(max-width: 801px) {
+    .movie-grid {
+      width: auto;
+      grid-template-columns: repeat(2, 1fr);
+    }
+}

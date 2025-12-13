@@ -1,0 +1,57 @@
+.headerDiv {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 5rem 0rem;
+    font-size: 2.5rem;
+}
+.head-item-lo {
+    cursor: pointer;
+}
+.head-item-lo:hover{
+    color: var(--color-green-button);
+    transition: 200ms;
+}
+
+.head-item-my {
+    font-size: 4.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.add-movie-icon {
+    cursor: pointer;
+    font-size: 2.4rem;
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+.add-movie-icon:hover{
+    color: var(--color-green-button);
+    transform: scale(1.1);
+    transition: 200ms;
+}
+
+.head-item-lo{
+    font-size: 1.6rem;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1000px) {
+
+}
+
+@media ( max-width: 500px),(max-width: 801px) {
+    .head-item-my {
+        font-size: 2.4rem;
+    }
+    .container{
+        max-width: 400px;
+    }
+    .logout-name {
+        display: none;
+    }
+}

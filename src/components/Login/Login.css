@@ -1,0 +1,81 @@
+.login-wrapper{
+    width: 30rem;
+    text-align: center;
+    margin-top: 18rem;
+}
+
+.container-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.signin-title {
+    font-size: 6.4rem;
+    margin-bottom: 4.8rem;
+}
+
+.remember-me-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: medium;
+}
+
+.checkbox-input{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.4rem;
+    height: 1.4rem;
+    background-color: var(--input-color);
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    position: relative;
+}
+
+
+.checkbox-input:checked {
+    background-color: var(--color-green-button); 
+    border-color: var(--color-green-button);
+}
+
+
+.checkbox-input:checked::after {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 9px;
+    height: 6px;
+    border: 2px solid white;
+    border-top: none;
+    border-right: none;
+    transform: translate(-50%, -50%) rotate(-45deg)
+}
+
+.error-message {
+    color: var(--Error-color);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1000px) {
+
+}
+
+
+
+@media ( max-width: 500px),(max-width: 801px) {
+    .login-wrapper{
+        width: 90vw;
+    }
+}
