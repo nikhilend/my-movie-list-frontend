@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import './App.css'
-import Footer from './components/Footer/Footer.jsx'
 import { Outlet } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { FETCH_URL } from './utils/constants.js';

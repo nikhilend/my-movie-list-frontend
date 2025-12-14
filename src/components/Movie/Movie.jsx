@@ -12,7 +12,7 @@ const Movie = ({title, poster, year, id}) => {
     <div tabIndex={0} className='movie-item'
         onClick={() => {navigate("/addedit/" + EDIT+ "?updateId=" + id)}}
         >
-        <img src={poster}></img>
+        {poster && <img src={poster}></img>}
         <p className='movie-title'>{title}</p>
         <p className='movie-year'>{year}</p>
     </div>

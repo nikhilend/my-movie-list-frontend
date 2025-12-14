@@ -10,5 +10,17 @@
 
 .no-movie-heading{
     margin-bottom: 2.4rem;
-    font-size: 5rem;
+    font-size: 4.8rem;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1000px) {
+
+}
+
+@media ( max-width: 500px),(max-width: 801px) {
+    .no-movie-heading{
+    font-size: 2.4rem;
+}
 }

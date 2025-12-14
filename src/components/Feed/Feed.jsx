@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Header from '../Header/Header.jsx';
 import '../../utils/Utility.css'
 import './Feed.css'
@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FETCH_URL, MOVIE_RECORDS } from '../../utils/constants.js';
 import {getFeed, updatePageNo } from '../../utils/userFeedSlice.js'
 import NoMovie from '../NoMovie/NoMovie.jsx';
+import ShimmerFeed from '../ShimmerFeed.jsx';
 
 const Feed = () => {
  const userFeed = useSelector(store => store.userFeed)
@@ -14,6 +15,7 @@ const Feed = () => {
  // use states for pages
  const [pageNumber, setPageNumber] = useState(1)
  const [pagesArray, setPagesArray] = useState([])
+ const [feedFeched, setfeedFetched] = useState(false)
 
  const dispatch = useDispatch();
 
@@ -36,6 +38,7 @@ async function fetchFeed(page) {
 
         //Calculate number of pages
         setPagesArray(Array.from({ length: Math.ceil(result?.totalMovies/MOVIE_RECORDS) }, (_, index) => index + 1));
+        setfeedFetched(true)
       }
   }
   catch(e) {
@@ -61,8 +64,8 @@ async function handlePrevNext(action) {
   }
 }
   // if no user feed dont load movies from user feed
-  if (!userFeed) return(<p>Loading</p>)
-  if (!userFeed.movies || userFeed.movies.length === 0) return(<NoMovie />)
+  if (!feedFeched && (!userFeed.movies || userFeed.movies.length === 0)) return(<ShimmerFeed/>)
+  if (feedFeched && (!userFeed.movies || userFeed.movies.length === 0)) return(<NoMovie/>)
   return (
     <div className='container'>
 
