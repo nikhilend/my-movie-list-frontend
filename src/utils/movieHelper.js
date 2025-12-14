@@ -46,7 +46,6 @@ import { EDIT, FETCH_URL } from "./constants";
 
   export async function handleAddEdit(base64Image, preview, title, year, doUpdateImage, updateId, action) {
     try{
-      throw Error("error")
         const baseFile = (action === EDIT && !doUpdateImage) ? preview : await toBase64(base64Image);
 
         const body = {
