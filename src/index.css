@@ -38,7 +38,7 @@ a{
 }
 
 .page-layout{
-  min-height: 86vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
 }

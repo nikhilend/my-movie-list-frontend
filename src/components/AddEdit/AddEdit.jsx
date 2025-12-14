@@ -20,7 +20,7 @@ const AddEdit = () => {
   const [year, setYear] = useState(0)
 
   //For UI error messages
-  const [errorElements, setErrorElements] = useState({errTitle: "", errYear: "", errImage: ""})
+  const [errorElements, setErrorElements] = useState({errTitle: "", errYear: "", errImage: "", apiError: ""})
   const [doUpdateImage, setDoUpdateImage] = useState(false)
   const [loading, setLoading] = useState(false);
 
@@ -70,17 +70,18 @@ const AddEdit = () => {
     catch(e) {
 
       setLoading(false)
-      throw e;
+      setErrorElements(prev => {return {...prev, apiError: "Something went wrong! please try again."}})
     }
   }
 
   return (
     <div className='container'>
+            
     <h1 className='addedit-heading'>
     {action === ADD && "Create a new Movie"}
     {action === EDIT && "Edit"}
+    {errorElements.apiError && <p className='error-message'>ERROR : {errorElements.apiError}</p>}
     </h1>
-
         <div className='addedit-wrapper'>
             {/* dropzone component */}
             
